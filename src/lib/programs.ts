@@ -1,9 +1,9 @@
-import disasterImg from "@/assets/program-disaster.jpg";
-import climateImg from "@/assets/program-climate.jpg";
-import foodImg from "@/assets/program-food.jpg";
-import waterImg from "@/assets/program-water.jpg";
-import genderImg from "@/assets/program-gender.jpg";
-import educationImg from "@/assets/program-education.jpg";
+import disasterImg from "@/assets/program-disaster.webp";
+import climateImg from "@/assets/program-climate.webp";
+import foodImg from "@/assets/program-food.webp";
+import waterImg from "@/assets/program-water.webp";
+import genderImg from "@/assets/program-gender.webp";
+import educationImg from "@/assets/program-education.webp";
 import {
   ShieldAlert,
   Leaf,

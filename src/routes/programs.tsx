@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
-import disasterImg from "@/assets/program-disaster.jpg";
+import disasterImg from "@/assets/program-disaster.webp";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -56,6 +56,7 @@ function ProgramsPage() {
                       alt={p.title}
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                       width={1280}
                       height={896}
                     />

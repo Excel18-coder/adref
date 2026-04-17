@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">ADREF Logo</title>
+  <desc id="desc">Gradient circle with stylized A mark</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f08f4f"/>
+      <stop offset="100%" stop-color="#7a3a16"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6ec"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="128" cy="128" r="120" fill="url(#bg)"/>
+  <path
+    d="M128 56 64 196h28l13-30h46l13 30h28L128 56Zm0 57 12 28h-24l12-28Z"
+    fill="url(#mark)"
+  />
+</svg>

@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero-community.jpg";
+import heroImg from "@/assets/hero-community.webp";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
-import villageImg from "@/assets/about-village.jpg";
+import villageImg from "@/assets/about-village.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -74,6 +74,8 @@ function HomePage() {
               src={heroImg}
               alt="African community standing together at golden hour"
               className="h-full w-full object-cover"
+              decoding="async"
+              fetchPriority="high"
               width={1920}
               height={1280}
             />
@@ -235,6 +237,7 @@ function HomePage() {
                   alt="Aerial view of African village"
                   className="w-full h-auto object-cover"
                   loading="lazy"
+                  decoding="async"
                   width={1600}
                   height={1024}
                 />

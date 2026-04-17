@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, HandHeart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import logoMark from "@/assets/adref-logo.svg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -36,9 +37,13 @@ export function Navbar() {
           }`}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-warm text-primary-foreground shadow-warm transition-transform group-hover:rotate-12">
-              <HandHeart className="h-5 w-5" />
-            </span>
+            <img
+              src={logoMark}
+              alt="ADREF logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-full shadow-warm transition-transform group-hover:rotate-12"
+            />
             <span className="font-display text-lg font-bold tracking-tight">
               ADREF
             </span>

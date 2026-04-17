@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
+import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -37,8 +38,15 @@ function ContactPage() {
 
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 700));
-    console.log("contact", data);
-    toast.success("Message sent!", { description: "We'll respond within 2 business days." });
+    saveClientSubmission("adref:contact-submissions", data);
+    openMailDraft({
+      to: "hello@adref.org",
+      subject: `Contact inquiry: ${data.subject}`,
+      body: `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`,
+    });
+    toast.success("Message prepared", {
+      description: "Your email app was opened with a pre-filled draft.",
+    });
     reset();
   };
 

@@ -10,6 +10,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
+import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
 
 export const Route = createFileRoute("/volunteer")({
   head: () => ({
@@ -56,9 +57,14 @@ function VolunteerPage() {
 
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 800));
-    console.log("volunteer application", data);
+    saveClientSubmission("adref:volunteer-submissions", data);
+    openMailDraft({
+      to: "volunteer@adref.org",
+      subject: `Volunteer application: ${data.area}`,
+      body: `Name: ${data.name}\nEmail: ${data.email}\nCountry: ${data.country}\nArea: ${data.area}\n\nMotivation:\n${data.message}`,
+    });
     toast.success("Application received!", {
-      description: "We'll be in touch within 5 business days.",
+      description: "Your email app was opened with a pre-filled volunteer draft.",
     });
     reset();
   };

@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
+import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -41,15 +42,37 @@ function DonatePage() {
 
   const amount = custom ? parseInt(custom, 10) || 0 : tier;
 
-  const handleDonate = (e: React.FormEvent) => {
+  const handleDonate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (amount < 1) {
       toast.error("Please choose an amount");
       return;
     }
-    toast.success(`Thank you for your $${amount} ${freq} gift!`, {
-      description: "Payment processing will activate when backend is connected.",
+    const formData = new FormData(e.currentTarget);
+    const donorName = String(formData.get("name") ?? "").trim();
+    const donorEmail = String(formData.get("email") ?? "").trim();
+
+    saveClientSubmission("adref:donation-intents", {
+      donorName,
+      donorEmail,
+      amount,
+      frequency: freq,
     });
+
+    openMailDraft({
+      to: "donate@adref.org",
+      subject: `Donation pledge: $${amount} ${freq === "monthly" ? "monthly" : "one-time"}`,
+      body: `Donor name: ${donorName}\nDonor email: ${donorEmail}\nAmount: $${amount}\nFrequency: ${freq}`,
+    });
+
+    toast.success(`Thank you for your $${amount} ${freq} gift!`, {
+      description: "Your email app was opened with a pre-filled donation draft.",
+    });
+
+    e.currentTarget.reset();
+    setCustom("");
+    setTier(75);
+    setFreq("once");
   };
 
   return (
@@ -138,8 +161,8 @@ function DonatePage() {
               <form onSubmit={handleDonate} className="mt-8 pt-8 border-t border-border space-y-4">
                 <h4 className="font-display text-lg font-semibold">Your details</h4>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <input required placeholder="Full name" className="px-4 py-3 rounded-xl border border-border bg-background focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
-                  <input required type="email" placeholder="Email" className="px-4 py-3 rounded-xl border border-border bg-background focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <input name="name" required placeholder="Full name" className="px-4 py-3 rounded-xl border border-border bg-background focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <input name="email" required type="email" placeholder="Email" className="px-4 py-3 rounded-xl border border-border bg-background focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
                 </div>
 
                 <button

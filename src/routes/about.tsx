@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
-import villageImg from "@/assets/about-village.jpg";
+import villageImg from "@/assets/about-village.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

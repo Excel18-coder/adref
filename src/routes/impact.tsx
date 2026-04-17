@@ -7,9 +7,9 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
-import waterImg from "@/assets/program-water.jpg";
-import foodImg from "@/assets/program-food.jpg";
-import educationImg from "@/assets/program-education.jpg";
+import waterImg from "@/assets/program-water.webp";
+import foodImg from "@/assets/program-food.webp";
+import educationImg from "@/assets/program-education.webp";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -189,7 +189,7 @@ function ImpactPage() {
                 className="group overflow-hidden rounded-3xl bg-card border border-border shadow-soft hover:shadow-warm transition-all"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={c.img} alt={c.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <img src={c.img} alt={c.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-6">
                   <span className="text-xs uppercase tracking-widest text-primary font-semibold">{c.region}</span>

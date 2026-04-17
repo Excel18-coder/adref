@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
+import logoMark from "@/assets/adref-logo.svg";
 
 import appCss from "../styles.css?url";
 
@@ -30,21 +31,43 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Impact Weaver builds modern, interactive NGO websites to drive donations and engagement for humanitarian causes." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Impact Weaver builds modern, interactive NGO websites to drive donations and engagement for humanitarian causes." },
+      { title: "ADREF — Africa Disaster Management & Resilience Foundation" },
+      { name: "description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
+      { name: "author", content: "ADREF" },
+      { property: "og:title", content: "ADREF — Africa Disaster Management & Resilience Foundation" },
+      { property: "og:description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Impact Weaver builds modern, interactive NGO websites to drive donations and engagement for humanitarian causes." },
+      { name: "twitter:site", content: "@adref_org" },
+      { name: "twitter:title", content: "ADREF — Africa Disaster Management & Resilience Foundation" },
+      { name: "twitter:description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: logoMark,
+      },
+      {
+        rel: "apple-touch-icon",
+        href: logoMark,
       },
     ],
   }),

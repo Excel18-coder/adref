@@ -1,5 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { HandHeart, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import logoMark from "@/assets/adref-logo.svg";
+
+const socialLinks = [
+  { icon: Facebook, href: "https://facebook.com/adref", label: "ADREF on Facebook" },
+  { icon: Instagram, href: "https://instagram.com/adref", label: "ADREF on Instagram" },
+  { icon: Twitter, href: "https://x.com/adref_org", label: "ADREF on X" },
+  { icon: Linkedin, href: "https://linkedin.com/company/adref", label: "ADREF on LinkedIn" },
+] as const;
 
 export function Footer() {
   return (
@@ -9,9 +17,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-warm text-primary-foreground">
-                <HandHeart className="h-5 w-5" />
-              </span>
+              <img src={logoMark} alt="ADREF logo" width={40} height={40} className="h-10 w-10 rounded-full" />
               <span className="font-display text-xl font-bold">ADREF</span>
             </Link>
             <p className="mt-4 text-sm text-secondary-foreground/80 leading-relaxed">
@@ -19,12 +25,14 @@ export function Footer() {
               resilient communities through humanitarian action and climate justice.
             </p>
             <div className="flex gap-3 mt-6">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
-                  aria-label="social"
+                  aria-label={label}
                 >
                   <Icon className="h-4 w-4" />
                 </a>
