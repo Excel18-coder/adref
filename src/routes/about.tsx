@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
 import villageImg from "@/assets/about-village.webp";
+import aboutHeroImg from "@/assets/hero-about.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -54,6 +55,8 @@ function AboutPage() {
           eyebrow="About us"
           title={<>A decade of <em className="italic text-primary">listening</em>, resourcing, and rising.</>}
           subtitle="ADREF is led by Africans, for Africans — building durable resilience with the communities most exposed to crisis."
+          image={aboutHeroImg}
+          imageAlt="ADREF team and community members gathered outdoors"
         />
 
         {/* MISSION VISION */}

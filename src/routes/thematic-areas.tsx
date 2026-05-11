@@ -14,6 +14,7 @@ import educationImg from "@/assets/program-education.jpg";
 import genderImg from "@/assets/program-gender.jpg";
 import communityImg from "@/assets/hero-community.jpg";
 import villageImg from "@/assets/about-village.jpg";
+import thematicHeroImg from "@/assets/hero-thematic.jpeg";
 
 export const Route = createFileRoute("/thematic-areas")({
   head: () => ({
@@ -123,6 +124,8 @@ function ThematicAreasPage() {
           eyebrow="Thematic Areas"
           title={<>Our focus areas for <em className="italic text-primary">resilience</em>.</>}
           subtitle="Explore the thematic areas that guide ADREF programs across disaster risk reduction, humanitarian response, and long-term community development."
+          image={thematicHeroImg}
+          imageAlt="Community gathering showcasing ADREF focus areas"
         />
 
         <section className="container mx-auto px-4 py-16 md:py-24">

@@ -37,15 +37,17 @@ export function Navbar() {
             scrolled ? "glass-strong shadow-soft" : "glass"
           }`}
         >
-          <Link to="/" className="flex items-center gap-2 group">
-            <img
-              src={logoMark}
-              alt="ADREF logo"
-              width={36}
-              height={36}
-              className="h-9 w-auto shadow-warm transition-transform group-hover:rotate-12"
-            />
-            <span className="font-display text-lg font-bold tracking-tight">
+          <Link to="/" className="flex items-center gap-3 group">
+            <span className="inline-flex items-center justify-center rounded-full bg-white/95 p-1.5 shadow-glow ring-2 ring-white/70">
+              <img
+                src={logoMark}
+                alt="ADREF logo"
+                width={48}
+                height={48}
+                className="h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 object-contain transition-transform group-hover:rotate-6"
+              />
+            </span>
+            <span className="font-display text-lg sm:text-xl font-bold tracking-tight">
               ADREF
             </span>
           </Link>

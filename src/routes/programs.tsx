@@ -8,6 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
 import disasterImg from "@/assets/program-disaster.webp";
+import programsHeroImg from "@/assets/hero-programs.jpeg";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -34,6 +35,8 @@ function ProgramsPage() {
           eyebrow="Programs"
           title={<>Six pillars. One <em className="italic text-primary">resilient</em> continent.</>}
           subtitle="Each program is designed to reinforce the others. Climate work strengthens food security. Education unlocks gender equity. Together, they build durable change."
+          image={programsHeroImg}
+          imageAlt="Field teams collaborating with local farmers"
         />
 
         <section className="container mx-auto px-4 py-20 md:py-28">

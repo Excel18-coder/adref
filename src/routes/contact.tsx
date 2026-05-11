@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
+import contactHeroImg from "@/assets/hero-contact.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -58,6 +59,8 @@ function ContactPage() {
           eyebrow="Contact"
           title={<>Let's <em className="italic text-primary">talk</em>.</>}
           subtitle="Partner inquiries, press, or just a hello — we read every message."
+          image={contactHeroImg}
+          imageAlt="ADREF staff speaking with community partners"
         />
 
         <section className="container mx-auto px-4 py-16 md:py-24">

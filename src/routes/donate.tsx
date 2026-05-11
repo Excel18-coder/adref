@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
+import donateHeroImg from "@/assets/hero-donate.jpeg";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -83,6 +84,8 @@ function DonatePage() {
           eyebrow="Donate"
           title={<>Your gift becomes <em className="italic text-primary">someone's tomorrow</em>.</>}
           subtitle="Choose a tier or set your own. 100% of one-time gifts go directly to programs — operations are funded by core grants."
+          image={donateHeroImg}
+          imageAlt="Volunteers distributing relief supplies"
         />
 
         <section className="container mx-auto px-4 py-16 md:py-20">

@@ -11,6 +11,7 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
+import volunteerHeroImg from "@/assets/hero-volunteer.jpeg";
 
 export const Route = createFileRoute("/volunteer")({
   head: () => ({
@@ -77,6 +78,8 @@ function VolunteerPage() {
           eyebrow="Volunteer"
           title={<>Lend your <em className="italic text-primary">hands</em>, your skills, your voice.</>}
           subtitle="Whether you're a doctor, designer, teacher, or first-time changemaker — there's a place for you here."
+          image={volunteerHeroImg}
+          imageAlt="Volunteers working together at a community project"
         />
 
         {/* Benefits */}

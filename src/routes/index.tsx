@@ -9,6 +9,8 @@ import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
 import villageImg from "@/assets/about-village.webp";
+import { ImageCarousel } from "@/components/ImageCarousel";
+import { galleryImages } from "@/lib/gallery";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -144,6 +146,14 @@ function HomePage() {
             <div className="h-10 w-[1px] bg-gradient-to-b from-white/60 to-transparent animate-pulse" />
           </div>
         </section>
+
+        {/* GALLERY CAROUSEL */}
+        <ImageCarousel
+          images={galleryImages}
+          title="Our work across Africa"
+          autoplay
+          interval={5000}
+        />
 
         {/* THEMATIC AREAS */}
         <section className="container mx-auto px-4 py-24 md:py-32">

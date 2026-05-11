@@ -7,9 +7,13 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import waterImg from "@/assets/program-water.webp";
 import foodImg from "@/assets/program-food.webp";
 import educationImg from "@/assets/program-education.webp";
+import disasterBackgroundImg from "@/assets/program-disaster.webp";
+import { galleryImages } from "@/lib/gallery";
+import { showcaseImages } from "@/lib/showcase";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -80,6 +84,8 @@ function ImpactPage() {
           eyebrow="Impact"
           title={<>Outcomes you can <em className="italic text-primary">measure</em>, lives you can witness.</>}
           subtitle="Radical transparency is a value, not a slogan. Here's exactly what your support has built."
+          image={disasterBackgroundImg}
+          imageAlt="Disaster response and community resilience in action"
         />
 
         {/* Big stats */}
@@ -197,6 +203,45 @@ function ImpactPage() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.text}</p>
                 </div>
               </motion.article>
+            ))}
+          </div>
+        </section>
+
+        {/* Image Gallery Carousel */}
+        <ImageCarousel
+          images={galleryImages}
+          title="Our work across Africa"
+          autoplay
+          interval={5000}
+        />
+
+        {/* Showcase Section */}
+        <section className="container mx-auto px-4 py-24 md:py-32">
+          <SectionHeader
+            eyebrow="Impact Showcase"
+            title={<>Visual evidence of <em className="italic text-primary">lasting change</em></>}
+            subtitle="These images tell stories of transformation, resilience, and community strength across Africa."
+          />
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {showcaseImages.map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="group overflow-hidden rounded-3xl shadow-soft hover:shadow-warm transition-all"
+              >
+                <div className="aspect-square overflow-hidden bg-muted">
+                  <img
+                    src={img}
+                    alt={`Impact showcase ${i + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </motion.div>
             ))}
           </div>
         </section>

@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Video } from "lucide-react";
 import logoMark from "@/assets/adref-logo.jpg";
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/adref", label: "ADREF on Facebook" },
-  { icon: Instagram, href: "https://instagram.com/adref", label: "ADREF on Instagram" },
-  { icon: Twitter, href: "https://x.com/adref_org", label: "ADREF on X" },
-  { icon: Linkedin, href: "https://linkedin.com/company/adref", label: "ADREF on LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/search/top?q=%40adref8888", label: "Facebook search for @adref8888" },
+  { icon: Video, href: "https://www.tiktok.com/@adref8888", label: "TikTok @adref8888" },
+  { icon: Twitter, href: "https://x.com/disastertrust", label: "X @disastertrust" },
 ] as const;
 
 export function Footer() {
@@ -16,8 +15,16 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16 relative">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="flex items-center gap-2">
-              <img src={logoMark} alt="ADREF logo" width={40} height={40} className="h-10 w-auto" />
+            <Link to="/" className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-full bg-white/95 p-1.5 shadow-glow ring-2 ring-white/70">
+                <img
+                  src={logoMark}
+                  alt="ADREF logo"
+                  width={48}
+                  height={48}
+                  className="h-11 w-11 sm:h-12 sm:w-12 object-contain"
+                />
+              </span>
               <span className="font-display text-xl font-bold">ADREF</span>
             </Link>
             <p className="mt-4 text-sm text-secondary-foreground/80 leading-relaxed">
