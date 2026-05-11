@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-import logoMark from "@/assets/adref-logo.svg";
+import logoMark from "@/assets/adref-logo.jpg";
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com/adref", label: "ADREF on Facebook" },
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <img src={logoMark} alt="ADREF logo" width={40} height={40} className="h-10 w-10 rounded-full" />
+              <img src={logoMark} alt="ADREF logo" width={40} height={40} className="h-10 w-auto" />
               <span className="font-display text-xl font-bold">ADREF</span>
             </Link>
             <p className="mt-4 text-sm text-secondary-foreground/80 leading-relaxed">
@@ -45,6 +45,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-secondary-foreground/80">
               {[
                 { to: "/about" as const, l: "About Us" },
+                { to: "/thematic-areas" as const, l: "Thematic Areas" },
                 { to: "/programs" as const, l: "Our Programs" },
                 { to: "/impact" as const, l: "Impact Stories" },
                 { to: "/volunteer" as const, l: "Volunteer" },
@@ -71,9 +72,11 @@ export function Footer() {
           <div>
             <h4 className="font-display text-base font-semibold mb-4">Reach Us</h4>
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
-              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> Nairobi, Kenya · Pan-African operations</li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 shrink-0" /> hello@adref.org</li>
-              <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 shrink-0" /> +254 700 000 000</li>
+              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> P.O. Box 7906 - 01000 Thika</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 shrink-0" /> info@adref.org</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 shrink-0" /> funding@adref.org</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 shrink-0" /> volunteer@adref.org</li>
+              <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 shrink-0" /> +254 723 358 550 / +254 738 539 491</li>
             </ul>
           </div>
         </div>

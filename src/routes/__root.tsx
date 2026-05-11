@@ -1,6 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import logoMark from "@/assets/adref-logo.svg";
+import logoMark from "@/assets/adref-logo.jpg";
 
 import appCss from "../styles.css?url";
 
@@ -62,11 +62,12 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
-        type: "image/svg+xml",
+        type: "image/jpeg",
         href: logoMark,
       },
       {
         rel: "apple-touch-icon",
+        type: "image/jpeg",
         href: logoMark,
       },
     ],

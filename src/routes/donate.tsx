@@ -60,7 +60,7 @@ function DonatePage() {
     });
 
     openMailDraft({
-      to: "donate@adref.org",
+      to: "funding@adref.org",
       subject: `Donation pledge: $${amount} ${freq === "monthly" ? "monthly" : "one-time"}`,
       body: `Donor name: ${donorName}\nDonor email: ${donorEmail}\nAmount: $${amount}\nFrequency: ${freq}`,
     });

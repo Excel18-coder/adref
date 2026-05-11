@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VolunteerRouteImport } from './routes/volunteer'
+import { Route as ThematicAreasRouteImport } from './routes/thematic-areas'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as DonateRouteImport } from './routes/donate'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const VolunteerRoute = VolunteerRouteImport.update({
   id: '/volunteer',
   path: '/volunteer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThematicAreasRoute = ThematicAreasRouteImport.update({
+  id: '/thematic-areas',
+  path: '/thematic-areas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/donate': typeof DonateRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
+  '/thematic-areas': typeof ThematicAreasRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/donate': typeof DonateRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
+  '/thematic-areas': typeof ThematicAreasRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/donate': typeof DonateRoute
   '/impact': typeof ImpactRoute
   '/programs': typeof ProgramsRoute
+  '/thematic-areas': typeof ThematicAreasRoute
   '/volunteer': typeof VolunteerRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/donate'
     | '/impact'
     | '/programs'
+    | '/thematic-areas'
     | '/volunteer'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/donate'
     | '/impact'
     | '/programs'
+    | '/thematic-areas'
     | '/volunteer'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/donate'
     | '/impact'
     | '/programs'
+    | '/thematic-areas'
     | '/volunteer'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   DonateRoute: typeof DonateRoute
   ImpactRoute: typeof ImpactRoute
   ProgramsRoute: typeof ProgramsRoute
+  ThematicAreasRoute: typeof ThematicAreasRoute
   VolunteerRoute: typeof VolunteerRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/volunteer'
       fullPath: '/volunteer'
       preLoaderRoute: typeof VolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thematic-areas': {
+      id: '/thematic-areas'
+      path: '/thematic-areas'
+      fullPath: '/thematic-areas'
+      preLoaderRoute: typeof ThematicAreasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programs': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   DonateRoute: DonateRoute,
   ImpactRoute: ImpactRoute,
   ProgramsRoute: ProgramsRoute,
+  ThematicAreasRoute: ThematicAreasRoute,
   VolunteerRoute: VolunteerRoute,
 }
 export const routeTree = rootRouteImport

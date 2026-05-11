@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact ADREF — Get in Touch" },
-      { name: "description", content: "Reach ADREF for partnerships, press inquiries, or general questions. Offices in Nairobi with operations across Africa." },
+      { name: "description", content: "Reach ADREF for partnerships, press inquiries, or general questions. Offices in Thika with operations across Africa." },
       { property: "og:title", content: "Contact ADREF" },
       { property: "og:description", content: "Reach ADREF for partnerships, press, or general inquiries." },
     ],
@@ -40,7 +40,7 @@ function ContactPage() {
     await new Promise((r) => setTimeout(r, 700));
     saveClientSubmission("adref:contact-submissions", data);
     openMailDraft({
-      to: "hello@adref.org",
+      to: "info@adref.org",
       subject: `Contact inquiry: ${data.subject}`,
       body: `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`,
     });
@@ -71,9 +71,9 @@ function ContactPage() {
               className="space-y-6"
             >
               {[
-                { icon: Mail, label: "Email", value: "hello@adref.org", sub: "Partners: partners@adref.org" },
-                { icon: Phone, label: "Phone", value: "+254 700 000 000", sub: "Mon–Fri · 9:00–18:00 EAT" },
-                { icon: MapPin, label: "Headquarters", value: "Westlands, Nairobi, Kenya", sub: "Field offices in 32 countries" },
+                { icon: Mail, label: "Email", value: "info@adref.org", sub: "funding@adref.org · volunteer@adref.org" },
+                { icon: Phone, label: "Phone", value: "+254 723 358 550 / +254 738 539 491", sub: "Mon–Fri · 9:00–18:00 EAT" },
+                { icon: MapPin, label: "Address", value: "P.O. Box 7906 - 01000 Thika", sub: "Kenya" },
               ].map((c) => (
                 <div key={c.label} className="rounded-3xl bg-card border border-border p-6 shadow-soft flex gap-4">
                   <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-warm text-primary-foreground shadow-warm">
@@ -90,8 +90,8 @@ function ContactPage() {
               {/* Map */}
               <div className="rounded-3xl overflow-hidden border border-border shadow-soft">
                 <iframe
-                  title="ADREF Nairobi office"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=36.7800%2C-1.2700%2C36.8200%2C-1.2400&layer=mapnik&marker=-1.2550%2C36.8000"
+                  title="ADREF Thika office"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=37.0530%2C-1.0600%2C37.0950%2C-1.0100&layer=mapnik&marker=-1.0350%2C37.0730"
                   className="w-full h-72 border-0"
                   loading="lazy"
                 />

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import logoMark from "@/assets/adref-logo.svg";
+import logoMark from "@/assets/adref-logo.jpg";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/thematic-areas", label: "Thematic Areas" },
   { to: "/programs", label: "Programs" },
   { to: "/impact", label: "Impact" },
   { to: "/volunteer", label: "Volunteer" },
@@ -42,7 +43,7 @@ export function Navbar() {
               alt="ADREF logo"
               width={36}
               height={36}
-              className="h-9 w-9 rounded-full shadow-warm transition-transform group-hover:rotate-12"
+              className="h-9 w-auto shadow-warm transition-transform group-hover:rotate-12"
             />
             <span className="font-display text-lg font-bold tracking-tight">
               ADREF
