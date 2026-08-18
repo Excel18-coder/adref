@@ -1,19 +1,12 @@
-import showcase01 from "@/assets/showcase-01.png";
-import showcase02 from "@/assets/showcase-02.png";
-import showcase03 from "@/assets/showcase-03.png";
-import showcase04 from "@/assets/showcase-04.png";
-import showcase05 from "@/assets/showcase-05.png";
-import showcase06 from "@/assets/showcase-06.png";
-import showcase07 from "@/assets/showcase-07.png";
-import showcase08 from "@/assets/showcase-08.png";
+import { galleryArtwork } from "@/lib/artwork";
 
 export const showcaseImages = [
-  showcase01,
-  showcase02,
-  showcase03,
-  showcase04,
-  showcase05,
-  showcase06,
-  showcase07,
-  showcase08,
+  galleryArtwork("Relief Response", "#0f5d3d", "#1d2b24", "#d97844"),
+  galleryArtwork("Water Access", "#2b6a52", "#1d2b24", "#d0a25c"),
+  galleryArtwork("Food Security", "#5a7c3c", "#23382e", "#c77b43"),
+  galleryArtwork("Climate Action", "#2d5d4a", "#253422", "#d2a15a"),
+  galleryArtwork("Recovery", "#2a5d50", "#1b2a29", "#d1884b"),
+  galleryArtwork("Resilience", "#496e4a", "#1a2c2f", "#d79d4d"),
+  galleryArtwork("Health", "#235c52", "#1a2b24", "#d88d47"),
+  galleryArtwork("Hope", "#3d704d", "#1f2b29", "#d6a969"),
 ];

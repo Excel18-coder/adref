@@ -1,9 +1,3 @@
-import disasterImg from "@/assets/program-disaster.webp";
-import climateImg from "@/assets/program-climate.webp";
-import foodImg from "@/assets/program-food.webp";
-import waterImg from "@/assets/program-water.webp";
-import genderImg from "@/assets/program-gender.webp";
-import educationImg from "@/assets/program-education.webp";
 import {
   ShieldAlert,
   Leaf,
@@ -12,13 +6,14 @@ import {
   Users,
   GraduationCap,
 } from "lucide-react";
+import { programArtwork } from "@/lib/artwork";
 
 export const programs = [
   {
     slug: "disaster-management",
     title: "Disaster Management",
     icon: ShieldAlert,
-    image: disasterImg,
+    image: programArtwork("Disaster Management", ["#2e6045", "#1a2b24", "#d6884d"]),
     short: "Rapid response when crisis strikes — from floods to displacement.",
     long: "We coordinate emergency relief, provide shelter, distribute essentials, and help communities prepare with early-warning systems and trained first responders.",
     stats: "84 emergencies responded",
@@ -27,7 +22,7 @@ export const programs = [
     slug: "climate-action",
     title: "Climate Change Action",
     icon: Leaf,
-    image: climateImg,
+    image: programArtwork("Climate Change Action", ["#3f6b42", "#264e3f", "#d5a45d"]),
     short: "Reforestation, climate-smart farming, and community-led adaptation.",
     long: "Together with local communities we plant indigenous trees, restore degraded land, and train smallholders in climate-resilient agriculture.",
     stats: "1.2M trees planted",
@@ -36,7 +31,7 @@ export const programs = [
     slug: "food-security",
     title: "Food Security",
     icon: Wheat,
-    image: foodImg,
+    image: programArtwork("Food Security", ["#4f6d38", "#233028", "#d39256"]),
     short: "Sustainable agriculture and nutrition programs that end hunger.",
     long: "Seed banks, women-led cooperatives, and school feeding initiatives that turn food insecurity into self-reliance.",
     stats: "320 cooperatives supported",
@@ -45,7 +40,7 @@ export const programs = [
     slug: "water-sanitation",
     title: "Water & Sanitation",
     icon: Droplets,
-    image: waterImg,
+    image: programArtwork("Water & Sanitation", ["#22655a", "#183130", "#d59b5b"]),
     short: "Clean water, dignified sanitation — a basic right made real.",
     long: "We drill boreholes, build latrines, and run hygiene education in the most underserved villages.",
     stats: "210 wells installed",
@@ -54,7 +49,7 @@ export const programs = [
     slug: "gender-inclusivity",
     title: "Gender Inclusivity",
     icon: Users,
-    image: genderImg,
+    image: programArtwork("Gender Inclusivity", ["#4d7d61", "#293320", "#d97e49"]),
     short: "Centering women and girls in every decision we make.",
     long: "From entrepreneurship grants to safe spaces, we invest in women leaders driving lasting change.",
     stats: "5,400 women empowered",
@@ -63,7 +58,7 @@ export const programs = [
     slug: "education-empowerment",
     title: "Education & Empowerment",
     icon: GraduationCap,
-    image: educationImg,
+    image: programArtwork("Education & Empowerment", ["#3d6e5b", "#1a2a2a", "#d7a45a"]),
     short: "Schools, scholarships, and skills training for the next generation.",
     long: "We rebuild schools, equip teachers, and offer scholarships so no child's future is dictated by a disaster.",
     stats: "12,800 children in school",

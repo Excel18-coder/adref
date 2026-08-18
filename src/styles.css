@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * ADREF Design System — Warm Humanitarian
+ * African Aid Foundation Design System — Warm Humanitarian
  * Earth tones: terracotta, sand, deep green, cream
  * Typography: Fraunces (display) + Inter (body)
  */
@@ -266,5 +266,77 @@
   .text-stroke {
     -webkit-text-stroke: 1px currentColor;
     color: transparent;
+  }
+
+  .editorial-photo-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr 0.9fr;
+    gap: 1rem;
+  }
+
+  .editorial-photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    min-height: 18rem;
+  }
+
+  .editorial-photo-card--tall {
+    min-height: 32rem;
+  }
+
+  .editorial-photo-card--wide {
+    grid-column: span 2;
+    min-height: 18rem;
+  }
+
+  .editorial-photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms ease;
+  }
+
+  .editorial-photo-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .editorial-photo-caption {
+    position: absolute;
+    inset: auto 1rem 1rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(15, 22, 18, 0.42);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 0.9rem;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .editorial-photo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .editorial-photo-card--wide {
+      grid-column: auto;
+    }
+
+    .editorial-photo-card,
+    .editorial-photo-card--tall,
+    .editorial-photo-card--wide {
+      min-height: 18rem;
+    }
   }
 }

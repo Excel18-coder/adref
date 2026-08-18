@@ -1,45 +1,25 @@
-import galleryImg01 from "@/assets/gallery-01.jpeg";
-import galleryImg02 from "@/assets/gallery-02.jpeg";
-import galleryImg03 from "@/assets/gallery-03.jpeg";
-import galleryImg04 from "@/assets/gallery-04.jpeg";
-import galleryImg05 from "@/assets/gallery-05.jpeg";
-import galleryImg06 from "@/assets/gallery-06.jpeg";
-import galleryImg07 from "@/assets/gallery-07.jpeg";
-import galleryImg08 from "@/assets/gallery-08.jpeg";
-import galleryImg09 from "@/assets/gallery-09.jpeg";
-import galleryImg10 from "@/assets/gallery-10.jpeg";
-import galleryImg11 from "@/assets/gallery-11.jpeg";
-import galleryImg12 from "@/assets/gallery-12.jpeg";
-import galleryImg13 from "@/assets/gallery-13.jpeg";
-import galleryImg14 from "@/assets/gallery-14.jpeg";
-import galleryImg15 from "@/assets/gallery-15.jpeg";
-import galleryImg16 from "@/assets/gallery-16.jpeg";
-import galleryImg17 from "@/assets/gallery-17.jpeg";
-import galleryImg18 from "@/assets/gallery-18.jpeg";
-import galleryImg19 from "@/assets/gallery-19.jpeg";
-import galleryImg20 from "@/assets/gallery-20.jpeg";
-import galleryImg21 from "@/assets/gallery-21.jpeg";
+import { galleryArtwork } from "@/lib/artwork";
 
 export const galleryImages = [
-  galleryImg01,
-  galleryImg02,
-  galleryImg03,
-  galleryImg04,
-  galleryImg05,
-  galleryImg06,
-  galleryImg07,
-  galleryImg08,
-  galleryImg09,
-  galleryImg10,
-  galleryImg11,
-  galleryImg12,
-  galleryImg13,
-  galleryImg14,
-  galleryImg15,
-  galleryImg16,
-  galleryImg17,
-  galleryImg18,
-  galleryImg19,
-  galleryImg20,
-  galleryImg21,
+  galleryArtwork("Relief Response", "#0f5d3d", "#1d2b24", "#d97844"),
+  galleryArtwork("Water Access", "#2b6a52", "#1d2b24", "#d0a25c"),
+  galleryArtwork("Food Security", "#5a7c3c", "#23382e", "#c77b43"),
+  galleryArtwork("Climate Action", "#2d5d4a", "#253422", "#d2a15a"),
+  galleryArtwork("Resilience", "#496e4a", "#1a2c2f", "#d79d4d"),
+  galleryArtwork("Community Care", "#3d6e5b", "#1a2a2a", "#d7a45a"),
+  galleryArtwork("Recovery", "#2a5d50", "#1b2a29", "#d1884b"),
+  galleryArtwork("Hope", "#3d704d", "#1f2b29", "#d6a969"),
+  galleryArtwork("Education", "#4d7d61", "#293320", "#d97e49"),
+  galleryArtwork("Health", "#235c52", "#1a2b24", "#d88d47"),
+  galleryArtwork("Water", "#22655a", "#183130", "#d59b5b"),
+  galleryArtwork("Disaster Relief", "#2d5f4c", "#1e2b2d", "#df945f"),
+  galleryArtwork("Climate", "#355e3a", "#1e2c28", "#d9ad5f"),
+  galleryArtwork("Partnership", "#5d7b5d", "#1f2c1d", "#c98d4a"),
+  galleryArtwork("Care Support", "#3d6a4a", "#1a2828", "#d38d4c"),
+  galleryArtwork("Inclusion", "#6a8060", "#283028", "#d0a15d"),
+  galleryArtwork("Energy", "#47564a", "#212a1f", "#d9a669"),
+  galleryArtwork("Conservation", "#2d5643", "#1c2b29", "#c28e48"),
+  galleryArtwork("Sustainability", "#2e5a4a", "#1a2b28", "#d8a767"),
+  galleryArtwork("Food & Nutrition", "#4f6d38", "#233028", "#d39256"),
+  galleryArtwork("Learning", "#3d6e5b", "#1a2a2a", "#d7a45a"),
 ];

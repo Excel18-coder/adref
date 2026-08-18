@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import logoMark from "@/assets/adref-logo.jpg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -38,17 +37,11 @@ export function Navbar() {
           }`}
         >
           <Link to="/" className="flex items-center gap-3 group">
-            <span className="inline-flex items-center justify-center rounded-full bg-white/95 p-1.5 shadow-glow ring-2 ring-white/70">
-              <img
-                src={logoMark}
-                alt="ADREF logo"
-                width={48}
-                height={48}
-                className="h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 object-contain transition-transform group-hover:rotate-6"
-              />
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 font-display text-base font-bold text-secondary shadow-glow ring-2 ring-white/70 transition-transform group-hover:rotate-6">
+              A
             </span>
             <span className="font-display text-lg sm:text-xl font-bold tracking-tight">
-              ADREF
+              African Aid Foundation
             </span>
           </Link>
 

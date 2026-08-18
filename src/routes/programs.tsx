@@ -7,18 +7,15 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
-import disasterImg from "@/assets/program-disaster.webp";
-import programsHeroImg from "@/assets/hero-programs.jpeg";
+import { programsHeroArt, programArtwork } from "@/lib/artwork";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
-      { title: "Programs — Disaster, Climate, Food, Water, Gender, Education | ADREF" },
+      { title: "Programs — Disaster, Climate, Food, Water, Gender, Education | African Aid Foundation" },
       { name: "description", content: "Six interconnected programs delivering disaster relief, climate action, food security, water access, gender equity, and education across Africa." },
-      { property: "og:title", content: "ADREF Programs" },
+      { property: "og:title", content: "African Aid Foundation Programs" },
       { property: "og:description", content: "Six interconnected programs delivering measurable resilience across Africa." },
-      { property: "og:image", content: disasterImg },
-      { name: "twitter:image", content: disasterImg },
     ],
   }),
   component: ProgramsPage,
@@ -35,8 +32,8 @@ function ProgramsPage() {
           eyebrow="Programs"
           title={<>Six pillars. One <em className="italic text-primary">resilient</em> continent.</>}
           subtitle="Each program is designed to reinforce the others. Climate work strengthens food security. Education unlocks gender equity. Together, they build durable change."
-          image={programsHeroImg}
-          imageAlt="Field teams collaborating with local farmers"
+          image={programsHeroArt}
+          imageAlt="African aid foundation programs art"
         />
 
         <section className="container mx-auto px-4 py-20 md:py-28">
@@ -55,7 +52,7 @@ function ProgramsPage() {
                 <div className="relative group">
                   <div className="overflow-hidden rounded-3xl shadow-warm">
                     <img
-                      src={p.image}
+                      src={programArtwork(p.title, ["#2e6045", "#1a2b24", "#d6884d"]) }
                       alt={p.title}
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"

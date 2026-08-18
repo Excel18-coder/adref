@@ -1,6 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
-import logoMark from "@/assets/adref-logo.jpg";
 
 import appCss from "../styles.css?url";
 
@@ -31,16 +30,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ADREF — Africa Disaster Management & Resilience Foundation" },
-      { name: "description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
-      { name: "author", content: "ADREF" },
-      { property: "og:title", content: "ADREF — Africa Disaster Management & Resilience Foundation" },
-      { property: "og:description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
+      { title: "African Aid Foundation — Community-led relief across Africa" },
+      { name: "description", content: "African Aid Foundation responds to emergencies, strengthens communities, and supports long-term resilience across Africa." },
+      { name: "author", content: "African Aid Foundation" },
+      { property: "og:title", content: "African Aid Foundation — Community-led relief across Africa" },
+      { property: "og:description", content: "African Aid Foundation responds to emergencies, strengthens communities, and supports long-term resilience across Africa." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@adref_org" },
-      { name: "twitter:title", content: "ADREF — Africa Disaster Management & Resilience Foundation" },
-      { name: "twitter:description", content: "ADREF builds resilient African communities through disaster response, climate action, water access, and education." },
+      { name: "twitter:site", content: "@AfricanAidFdn" },
+      { name: "twitter:title", content: "African Aid Foundation — Community-led relief across Africa" },
+      { name: "twitter:description", content: "African Aid Foundation responds to emergencies, strengthens communities, and supports long-term resilience across Africa." },
     ],
     links: [
       {
@@ -62,13 +61,13 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
-        type: "image/jpeg",
-        href: logoMark,
+        type: "image/svg+xml",
+        href: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f5d3d'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-size='30' fill='white' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E",
       },
       {
         rel: "apple-touch-icon",
-        type: "image/jpeg",
-        href: logoMark,
+        type: "image/svg+xml",
+        href: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f5d3d'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-size='30' fill='white' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E",
       },
     ],
   }),

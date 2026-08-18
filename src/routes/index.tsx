@@ -1,34 +1,48 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero-community.webp";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
 import { programs } from "@/lib/programs";
-import villageImg from "@/assets/about-village.webp";
 import { ImageCarousel } from "@/components/ImageCarousel";
-import { galleryImages } from "@/lib/gallery";
+import community01 from "@/assets/community/community-01.jpg";
+import community02 from "@/assets/community/community-02.jpg";
+import community03 from "@/assets/community/community-03.jpg";
+import community04 from "@/assets/community/community-04.jpg";
+import community05 from "@/assets/community/community-05.jpg";
+import community06 from "@/assets/community/community-06.jpg";
+import community07 from "@/assets/community/community-07.jpg";
+import community08 from "@/assets/community/community-08.jpg";
+
+const communityPhotos = [
+  community01,
+  community02,
+  community03,
+  community04,
+  community05,
+  community06,
+  community07,
+  community08,
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ADREF — Building Resilient African Communities" },
+      { title: "African Aid Foundation — Relief, resilience, and recovery" },
       {
         name: "description",
         content:
-          "ADREF responds to disasters, fights climate change, and empowers communities across Africa. Donate, volunteer, or partner with us.",
+          "African Aid Foundation helps communities prepare for crisis, recover from hardship, and build resilient futures across Africa.",
       },
-      { property: "og:title", content: "ADREF — Building Resilient African Communities" },
+      { property: "og:title", content: "African Aid Foundation — Relief, resilience, and recovery" },
       {
         property: "og:description",
         content:
-          "Disaster response, climate action, food security, and education across Africa.",
+          "Disaster response, climate action, food security, and community support across Africa.",
       },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
     ],
   }),
   component: HomePage,
@@ -41,24 +55,26 @@ const stats = [
   { value: 32, suffix: "", label: "African nations served" },
 ];
 
+const galleryImages = communityPhotos;
+
 const testimonials = [
   {
     quote:
-      "ADREF didn't just bring food after the floods — they helped us rebuild our farms with seeds that resist drought. They listen first.",
-    name: "Amara Okeke",
-    role: "Farmer, Eastern Nigeria",
+      "The support came at a critical moment. We were not just given aid — we were helped to rebuild with dignity and long-term resilience.",
+    name: "Community Farmer",
+    role: "Food security beneficiary",
   },
   {
     quote:
-      "When the school collapsed, we thought our children would never sit in a classroom again. Today, 240 of them are learning under a new roof.",
-    name: "Joseph Mwangi",
-    role: "Headteacher, Nakuru County",
+      "The response was immediate and practical. Families were supported with essentials, and the recovery plan helped us move forward with confidence.",
+    name: "School Leader",
+    role: "Education partner",
   },
   {
     quote:
-      "Our partnership with ADREF transformed how we deliver climate finance — community-led, measurable, deeply human.",
-    name: "Dr. Ifeoma Adeyemi",
-    role: "Director, Climate Resilience Fund",
+      "What stood out most was the community-centered approach — practical, transparent, and focused on long-term recovery.",
+    name: "Local Partner",
+    role: "Climate resilience network",
   },
 ];
 
@@ -71,19 +87,8 @@ function HomePage() {
       <main className="flex-1">
         {/* HERO */}
         <section className="relative min-h-screen flex items-end overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src={heroImg}
-              alt="African community standing together at golden hour"
-              className="h-full w-full object-cover"
-              decoding="async"
-              fetchPriority="high"
-              width={1920}
-              height={1280}
-            />
-            <div className="absolute inset-0 bg-gradient-hero" />
-          </div>
-
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(244,164,96,0.35),_transparent_45%),linear-gradient(135deg,_rgba(14,64,49,0.9),_rgba(18,30,24,0.82))]" />
+              <img src={communityPhotos[0]} alt="African aid foundation community outreach" className="absolute inset-0 h-full w-full object-cover opacity-60" />
           <div className="container mx-auto px-4 pb-20 md:pb-32 pt-40 relative">
             <div className="max-w-3xl">
               <motion.span
@@ -113,9 +118,9 @@ function HomePage() {
                 transition={{ duration: 0.9, delay: 0.25 }}
                 className="mt-6 text-lg md:text-2xl text-white/85 max-w-2xl text-pretty leading-relaxed"
               >
-                ADREF mobilizes disaster response, climate action, and
-                community empowerment across Africa — with the people who live
-                the change.
+                African Aid Foundation mobilizes disaster response, climate action, and
+                community empowerment across Africa — helping families recover,
+                adapt, and thrive.
               </motion.p>
 
               <motion.div
@@ -148,12 +153,38 @@ function HomePage() {
         </section>
 
         {/* GALLERY CAROUSEL */}
-        <ImageCarousel
-          images={galleryImages}
-          title="Our work across Africa"
-          autoplay
-          interval={5000}
-        />
+        <section className="container mx-auto px-4 py-24 md:py-32">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-[0.28em] text-primary font-semibold">Photo story</span>
+              <h2 className="mt-2 font-display text-4xl md:text-5xl font-semibold tracking-tight">
+                Our work across Africa
+              </h2>
+            </div>
+            <div className="hidden md:block text-sm text-muted-foreground max-w-md">
+              Real communities, practical support, and the dignity of showing up when it matters most.
+            </div>
+          </div>
+
+          <div className="editorial-photo-grid">
+            <article className="editorial-photo-card editorial-photo-card--tall">
+              <img src={galleryImages[0]} alt="Community aid and resilience" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Relief</div>
+            </article>
+            <article className="editorial-photo-card">
+              <img src={galleryImages[1]} alt="Water and sanitation access" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Water</div>
+            </article>
+            <article className="editorial-photo-card">
+              <img src={galleryImages[2]} alt="Food security outreach" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Food</div>
+            </article>
+            <article className="editorial-photo-card editorial-photo-card--wide">
+              <img src={galleryImages[3]} alt="Community climate resilience" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Resilience</div>
+            </article>
+          </div>
+        </section>
 
         {/* THEMATIC AREAS */}
         <section className="container mx-auto px-4 py-24 md:py-32">
@@ -241,16 +272,21 @@ function HomePage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative overflow-hidden rounded-3xl shadow-warm">
-                <img
-                  src={villageImg}
-                  alt="Aerial view of African village"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  width={1600}
-                  height={1024}
-                />
+              <div className="relative overflow-hidden rounded-3xl shadow-warm bg-[linear-gradient(135deg,_rgba(218,125,63,0.23),_rgba(18,88,66,0.22)),radial-gradient(circle_at_20%_20%,_rgba(255,255,255,0.55),_transparent_20%),linear-gradient(135deg,_#f6efe6,_#dfead6)] p-6 md:p-8">
+                <div className="rounded-[28px] border border-white/60 bg-white/10 p-6 backdrop-blur-sm">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <div className="text-xs uppercase tracking-[0.3em] text-primary">Community</div>
+                      <div className="mt-2 font-display text-3xl md:text-4xl font-semibold text-secondary">Resilience</div>
+                    </div>
+                    <div className="h-16 w-16 rounded-full border border-primary/40 bg-gradient-warm shadow-warm" />
+                  </div>
+                  <div className="mt-6 grid grid-cols-3 gap-3">
+                    {Array.from({ length: 6 }).map((_, idx) => (
+                      <div key={idx} className="h-20 rounded-2xl bg-white/20 border border-white/30" />
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl p-5 shadow-warm border border-border max-w-[220px]">
                 <div className="font-display text-3xl font-semibold text-primary">2014</div>
@@ -266,15 +302,14 @@ function HomePage() {
                 Born from <em className="italic text-primary">lived experience</em>, built for lasting change.
               </h2>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                ADREF was founded in 2014 by a group of African humanitarians,
-                community organizers, and climate scientists who believed that
-                the people closest to crisis must lead the response.
+                African Aid Foundation was created to meet communities where they are,
+                with practical support, local leadership, and long-term investment in
+                recovery and resilience.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                A decade later, we operate in 32 countries — never as
-                outsiders, always as partners. From flood relief in
-                Mozambique to women's seed cooperatives in Niger, our work
-                begins with listening.
+                We work alongside communities to respond to shocks, recover with dignity,
+                and strengthen systems that keep families safe, food-secure, and prepared
+                for the future.
               </p>
               <Link
                 to="/about"

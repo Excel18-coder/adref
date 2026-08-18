@@ -8,14 +8,13 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
-import donateHeroImg from "@/assets/hero-donate.jpeg";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
     meta: [
-      { title: "Donate — Power Resilience Across Africa | ADREF" },
-      { name: "description", content: "Your gift funds disaster response, clean water, climate action, and education. 100% transparent. Tax-deductible." },
-      { property: "og:title", content: "Donate to ADREF" },
+      { title: "Donate — Support African Aid Foundation" },
+      { name: "description", content: "Your gift funds emergency relief, clean water, climate adaptation, and long-term community resilience across Africa." },
+      { property: "og:title", content: "Donate to African Aid Foundation" },
       { property: "og:description", content: "Your gift funds disaster response, clean water, and education across Africa." },
     ],
   }),
@@ -53,7 +52,7 @@ function DonatePage() {
     const donorName = String(formData.get("name") ?? "").trim();
     const donorEmail = String(formData.get("email") ?? "").trim();
 
-    saveClientSubmission("adref:donation-intents", {
+    saveClientSubmission("african-aid-foundation:donation-intents", {
       donorName,
       donorEmail,
       amount,
@@ -61,7 +60,7 @@ function DonatePage() {
     });
 
     openMailDraft({
-      to: "funding@adref.org",
+      to: "hello@africanaidfoundation.org",
       subject: `Donation pledge: $${amount} ${freq === "monthly" ? "monthly" : "one-time"}`,
       body: `Donor name: ${donorName}\nDonor email: ${donorEmail}\nAmount: $${amount}\nFrequency: ${freq}`,
     });
@@ -83,9 +82,7 @@ function DonatePage() {
         <PageHero
           eyebrow="Donate"
           title={<>Your gift becomes <em className="italic text-primary">someone's tomorrow</em>.</>}
-          subtitle="Choose a tier or set your own. 100% of one-time gifts go directly to programs — operations are funded by core grants."
-          image={donateHeroImg}
-          imageAlt="Volunteers distributing relief supplies"
+          subtitle="Choose a tier or set your own. Your support helps communities recover, adapt, and build long-term resilience."
         />
 
         <section className="container mx-auto px-4 py-16 md:py-20">
@@ -192,7 +189,7 @@ function DonatePage() {
               >
                 <div className="absolute inset-0 bg-gradient-glow opacity-40" />
                 <div className="relative">
-                  <h4 className="font-display text-2xl font-semibold">Why trust ADREF</h4>
+                  <h4 className="font-display text-2xl font-semibold">Why support us</h4>
                   <ul className="mt-5 space-y-3">
                     {trust.map((t) => (
                       <li key={t} className="flex gap-3 text-sm">
@@ -215,7 +212,7 @@ function DonatePage() {
                   "Every gift is a vote for a more resilient Africa. Thank you for standing with us."
                 </p>
                 <div className="mt-4 text-sm text-muted-foreground">
-                  — Dr. Wanjiru Kamau, Executive Director
+                  — Community leadership & local partners
                 </div>
               </motion.div>
             </div>
@@ -229,7 +226,7 @@ function DonatePage() {
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
               {[
                 { t: "Corporate partnership", d: "Match employee giving, sponsor a program, or co-create campaigns." },
-                { t: "Legacy giving", d: "Include ADREF in your will and create generational impact." },
+                { t: "Legacy giving", d: "Create meaningful long-term impact through planned support." },
                 { t: "In-kind donations", d: "Equipment, expertise, services — we welcome non-cash contributions." },
               ].map((x) => (
                 <div key={x.t} className="rounded-3xl bg-card border border-border p-7 shadow-soft">

@@ -8,22 +8,33 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Counter } from "@/components/Counter";
 import { CTABanner } from "@/components/CTABanner";
 import { ImageCarousel } from "@/components/ImageCarousel";
-import waterImg from "@/assets/program-water.webp";
-import foodImg from "@/assets/program-food.webp";
-import educationImg from "@/assets/program-education.webp";
-import disasterBackgroundImg from "@/assets/program-disaster.webp";
-import { galleryImages } from "@/lib/gallery";
-import { showcaseImages } from "@/lib/showcase";
+import community01 from "@/assets/community/community-01.jpg";
+import community02 from "@/assets/community/community-02.jpg";
+import community03 from "@/assets/community/community-03.jpg";
+import community04 from "@/assets/community/community-04.jpg";
+import community05 from "@/assets/community/community-05.jpg";
+import community06 from "@/assets/community/community-06.jpg";
+import community07 from "@/assets/community/community-07.jpg";
+import community08 from "@/assets/community/community-08.jpg";
+
+const communityPhotos = [
+  community01,
+  community02,
+  community03,
+  community04,
+  community05,
+  community06,
+  community07,
+  community08,
+];
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
     meta: [
-      { title: "Impact — Lives Changed, Trees Planted, Wells Built | ADREF" },
-      { name: "description", content: "Transparent data on ADREF's impact: 10,000+ lives, 1.2M trees, 210 wells. Read case studies and outcome reports." },
-      { property: "og:title", content: "ADREF Impact" },
-      { property: "og:description", content: "Transparent data on ADREF's impact across Africa." },
-      { property: "og:image", content: waterImg },
-      { name: "twitter:image", content: waterImg },
+      { title: "Impact — Lives Changed, Trees Planted, Wells Built | African Aid Foundation" },
+      { name: "description", content: "Transparent data on African Aid Foundation's impact across Africa: stronger communities, cleaner water, secure food systems, and resilient futures." },
+      { property: "og:title", content: "African Aid Foundation Impact" },
+      { property: "og:description", content: "Transparent data on African Aid Foundation's impact across Africa." },
     ],
   }),
   component: ImpactPage,
@@ -38,6 +49,10 @@ const yearlyImpact = [
   { year: "2024", lives: 10200, trees: 1200 },
 ];
 
+const galleryImages = communityPhotos;
+
+const showcaseImages = communityPhotos.slice(0, 4);
+
 const byProgram = [
   { name: "Disaster", value: 84 },
   { name: "Climate", value: 68 },
@@ -49,22 +64,22 @@ const byProgram = [
 
 const cases = [
   {
-    img: waterImg,
-    region: "Eastern Kenya",
-    title: "From dry wells to thriving gardens",
-    text: "12 boreholes transformed 4 villages, supporting 3,200 residents and reviving smallholder farming year-round.",
+    img: communityPhotos[3],
+    region: "Regional water systems",
+    title: "From dry wells to thriving communities",
+    text: "Clean water access supports sanitation, food production, and local resilience across vulnerable communities.",
   },
   {
-    img: foodImg,
-    region: "Sahel · Niger",
-    title: "Women-led seed cooperatives",
-    text: "320 cooperatives produced 84 tons of drought-resistant grain — eliminating hunger gaps for 18,000 people.",
+    img: communityPhotos[4],
+    region: "Agricultural support",
+    title: "Women-led resilience networks",
+    text: "Support for community-led farming and food systems helps reduce risk and strengthen household stability.",
   },
   {
-    img: educationImg,
-    region: "Northern Mozambique",
-    title: "Rebuilding after Cyclone Idai",
-    text: "12 schools reconstructed; 4,100 children back in classrooms within 18 months of the disaster.",
+    img: communityPhotos[5],
+    region: "Learning and recovery",
+    title: "Back to school and back to stability",
+    text: "Education and community support create safer, stronger futures for children and families.",
   },
 ];
 
@@ -84,8 +99,8 @@ function ImpactPage() {
           eyebrow="Impact"
           title={<>Outcomes you can <em className="italic text-primary">measure</em>, lives you can witness.</>}
           subtitle="Radical transparency is a value, not a slogan. Here's exactly what your support has built."
-          image={disasterBackgroundImg}
-          imageAlt="Disaster response and community resilience in action"
+          image={communityPhotos[0]}
+          imageAlt="African aid foundation impact photography"
         />
 
         {/* Big stats */}
@@ -207,13 +222,38 @@ function ImpactPage() {
           </div>
         </section>
 
-        {/* Image Gallery Carousel */}
-        <ImageCarousel
-          images={galleryImages}
-          title="Our work across Africa"
-          autoplay
-          interval={5000}
-        />
+        <section className="container mx-auto px-4 py-24 md:py-32">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-[0.28em] text-primary font-semibold">Field impact</span>
+              <h2 className="mt-2 font-display text-4xl md:text-5xl font-semibold tracking-tight">
+                Real moments from the ground
+              </h2>
+            </div>
+            <div className="hidden md:block text-sm text-muted-foreground max-w-md">
+              The strongest stories are often simple: clean water, restored schools, food on the table, and hope restored.
+            </div>
+          </div>
+
+          <div className="editorial-photo-grid">
+            <article className="editorial-photo-card editorial-photo-card--tall">
+              <img src={galleryImages[0]} alt="Community recovery scene" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Recovery</div>
+            </article>
+            <article className="editorial-photo-card">
+              <img src={galleryImages[1]} alt="Support outreach" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Support</div>
+            </article>
+            <article className="editorial-photo-card">
+              <img src={galleryImages[2]} alt="Education and women empowerment" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Education</div>
+            </article>
+            <article className="editorial-photo-card editorial-photo-card--wide">
+              <img src={galleryImages[3]} alt="Climate resilience program" loading="lazy" decoding="async" />
+              <div className="editorial-photo-caption">Climate</div>
+            </article>
+          </div>
+        </section>
 
         {/* Showcase Section */}
         <section className="container mx-auto px-4 py-24 md:py-32">

@@ -6,18 +6,15 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
-import villageImg from "@/assets/about-village.webp";
-import aboutHeroImg from "@/assets/hero-about.jpeg";
+import { storyHeroArt } from "@/lib/artwork";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About ADREF — Our Story, Mission & Team" },
-      { name: "description", content: "Founded in 2014, ADREF is led by African humanitarians serving 32 nations. Discover our mission, values, history, and team." },
-      { property: "og:title", content: "About ADREF — Our Story, Mission & Team" },
-      { property: "og:description", content: "Founded in 2014, ADREF is led by African humanitarians serving 32 nations." },
-      { property: "og:image", content: villageImg },
-      { name: "twitter:image", content: villageImg },
+      { title: "About African Aid Foundation — Our Story, Mission & Values" },
+      { name: "description", content: "African Aid Foundation is rooted in African leadership, community trust, and practical action for resilience, recovery, and dignity." },
+      { property: "og:title", content: "About African Aid Foundation — Our Story, Mission & Values" },
+      { property: "og:description", content: "African Aid Foundation is rooted in African leadership, community trust, and practical action for resilience, recovery, and dignity." },
     ],
   }),
   component: AboutPage,
@@ -40,10 +37,10 @@ const timeline = [
 ];
 
 const team = [
-  { name: "Dr. Wanjiru Kamau", role: "Executive Director", bio: "Public health veteran, 20+ years across East Africa." },
-  { name: "Samuel Adekunle", role: "Head of Programs", bio: "Former WFP coordinator. Specialist in disaster response." },
-  { name: "Fatima Diallo", role: "Climate Lead", bio: "Climate scientist & community organizer from Mali." },
-  { name: "Joshua Mensah", role: "Director of Partnerships", bio: "Built coalitions across UN agencies and African Union." },
+  { name: "Regional Leadership", role: "Executive Leadership", bio: "Guides strategy, oversight, and accountability across field operations." },
+  { name: "Program Teams", role: "Humanitarian Response", bio: "Coordinates urgent relief, protection, and recovery support where need is greatest." },
+  { name: "Climate Specialists", role: "Adaptation & Resilience", bio: "Works with communities on climate-smart solutions and environmental recovery." },
+  { name: "Partnership Network", role: "Community & Institutional Partnerships", bio: "Connects local leadership with resources and long-term support." },
 ];
 
 function AboutPage() {
@@ -54,9 +51,9 @@ function AboutPage() {
         <PageHero
           eyebrow="About us"
           title={<>A decade of <em className="italic text-primary">listening</em>, resourcing, and rising.</>}
-          subtitle="ADREF is led by Africans, for Africans — building durable resilience with the communities most exposed to crisis."
-          image={aboutHeroImg}
-          imageAlt="ADREF team and community members gathered outdoors"
+          subtitle="African Aid Foundation is led by Africans, for Africans — building durable resilience with communities most exposed to crisis."
+          image={storyHeroArt}
+          imageAlt="African aid foundation story art"
         />
 
         {/* MISSION VISION */}
@@ -164,7 +161,7 @@ function AboutPage() {
             </div>
             <div className="mt-12 text-center">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:scale-105 transition-all">
-                Join our team
+                Partner with us
               </Link>
             </div>
           </div>

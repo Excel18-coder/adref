@@ -9,15 +9,14 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
-import contactHeroImg from "@/assets/hero-contact.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact ADREF — Get in Touch" },
-      { name: "description", content: "Reach ADREF for partnerships, press inquiries, or general questions. Offices in Thika with operations across Africa." },
-      { property: "og:title", content: "Contact ADREF" },
-      { property: "og:description", content: "Reach ADREF for partnerships, press, or general inquiries." },
+      { title: "Contact African Aid Foundation" },
+      { name: "description", content: "Reach African Aid Foundation for partnerships, media inquiries, and humanitarian collaboration across Africa." },
+      { property: "og:title", content: "Contact African Aid Foundation" },
+      { property: "og:description", content: "Reach African Aid Foundation for partnerships, media inquiries, and general collaboration." },
     ],
   }),
   component: ContactPage,
@@ -39,9 +38,9 @@ function ContactPage() {
 
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 700));
-    saveClientSubmission("adref:contact-submissions", data);
+    saveClientSubmission("african-aid-foundation:contact-submissions", data);
     openMailDraft({
-      to: "info@adref.org",
+      to: "hello@africanaidfoundation.org",
       subject: `Contact inquiry: ${data.subject}`,
       body: `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`,
     });
@@ -58,9 +57,7 @@ function ContactPage() {
         <PageHero
           eyebrow="Contact"
           title={<>Let's <em className="italic text-primary">talk</em>.</>}
-          subtitle="Partner inquiries, press, or just a hello — we read every message."
-          image={contactHeroImg}
-          imageAlt="ADREF staff speaking with community partners"
+          subtitle="Partnerships, media requests, and collaboration opportunities are always welcome."
         />
 
         <section className="container mx-auto px-4 py-16 md:py-24">
@@ -74,9 +71,9 @@ function ContactPage() {
               className="space-y-6"
             >
               {[
-                { icon: Mail, label: "Email", value: "info@adref.org", sub: "funding@adref.org · volunteer@adref.org" },
-                { icon: Phone, label: "Phone", value: "+254 723 358 550 / +254 738 539 491", sub: "Mon–Fri · 9:00–18:00 EAT" },
-                { icon: MapPin, label: "Address", value: "P.O. Box 7906 - 01000 Thika", sub: "Kenya" },
+                { icon: Mail, label: "Email", value: "hello@africanaidfoundation.org", sub: "For partnerships, funding, and general inquiries" },
+                { icon: Phone, label: "Phone", value: "Available on request", sub: "Contact by email for coordination" },
+                { icon: MapPin, label: "Address", value: "Africa-wide operations", sub: "Community-centered, regionally led" },
               ].map((c) => (
                 <div key={c.label} className="rounded-3xl bg-card border border-border p-6 shadow-soft flex gap-4">
                   <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-warm text-primary-foreground shadow-warm">
@@ -90,14 +87,11 @@ function ContactPage() {
                 </div>
               ))}
 
-              {/* Map */}
-              <div className="rounded-3xl overflow-hidden border border-border shadow-soft">
-                <iframe
-                  title="ADREF Thika office"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=37.0530%2C-1.0600%2C37.0950%2C-1.0100&layer=mapnik&marker=-1.0350%2C37.0730"
-                  className="w-full h-72 border-0"
-                  loading="lazy"
-                />
+              <div className="rounded-3xl border border-border bg-sand p-6 shadow-soft">
+                <div className="font-display text-2xl font-semibold text-primary">Regional reach</div>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  We work with local partners and communities across the continent to deliver support where it is needed most.
+                </p>
               </div>
             </motion.div>
 

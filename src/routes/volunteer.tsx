@@ -11,15 +11,14 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { openMailDraft, saveClientSubmission } from "@/lib/client-actions";
-import volunteerHeroImg from "@/assets/hero-volunteer.jpeg";
 
 export const Route = createFileRoute("/volunteer")({
   head: () => ({
     meta: [
-      { title: "Volunteer — Join the ADREF Movement" },
-      { name: "description", content: "Apply to volunteer with ADREF. Field, remote, and skill-based opportunities across disaster response, climate action, and education." },
-      { property: "og:title", content: "Volunteer with ADREF" },
-      { property: "og:description", content: "Apply to volunteer with ADREF — field, remote, and skill-based opportunities." },
+      { title: "Volunteer — Join African Aid Foundation" },
+      { name: "description", content: "Apply to volunteer with African Aid Foundation. Field, remote, and skill-based opportunities across disaster response, climate action, and community support." },
+      { property: "og:title", content: "Volunteer with African Aid Foundation" },
+      { property: "og:description", content: "Apply to volunteer with African Aid Foundation — field, remote, and skill-based opportunities." },
     ],
   }),
   component: VolunteerPage,
@@ -39,7 +38,7 @@ const benefits = [
   { icon: Heart, title: "Real impact", text: "Work directly with communities driving measurable, lasting change." },
   { icon: Globe, title: "Pan-African network", text: "Connect with leaders, scientists, and changemakers across 32 nations." },
   { icon: GraduationCap, title: "Skills & training", text: "Free workshops in humanitarian response, climate adaptation, and more." },
-  { icon: Sparkles, title: "Lifetime community", text: "Join a global family of 8,000+ ADREF alumni and current volunteers." },
+  { icon: Sparkles, title: "Lifetime community", text: "Join a community of volunteers committed to long-term recovery and African-led resilience." },
 ];
 
 const faqs = [
@@ -58,9 +57,9 @@ function VolunteerPage() {
 
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 800));
-    saveClientSubmission("adref:volunteer-submissions", data);
+    saveClientSubmission("african-aid-foundation:volunteer-submissions", data);
     openMailDraft({
-      to: "volunteer@adref.org",
+      to: "hello@africanaidfoundation.org",
       subject: `Volunteer application: ${data.area}`,
       body: `Name: ${data.name}\nEmail: ${data.email}\nCountry: ${data.country}\nArea: ${data.area}\n\nMotivation:\n${data.message}`,
     });
@@ -77,9 +76,7 @@ function VolunteerPage() {
         <PageHero
           eyebrow="Volunteer"
           title={<>Lend your <em className="italic text-primary">hands</em>, your skills, your voice.</>}
-          subtitle="Whether you're a doctor, designer, teacher, or first-time changemaker — there's a place for you here."
-          image={volunteerHeroImg}
-          imageAlt="Volunteers working together at a community project"
+          subtitle="Whether you're a professional, student, or first-time changemaker — there is a place to contribute."
         />
 
         {/* Benefits */}
@@ -121,13 +118,13 @@ function VolunteerPage() {
 
               <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-5">
                 <Field label="Full name" error={errors.name?.message}>
-                  <input {...register("name")} className="input" placeholder="Amara Okeke" />
+                  <input {...register("name")} className="input" placeholder="Your full name" />
                 </Field>
                 <Field label="Email" error={errors.email?.message}>
-                  <input type="email" {...register("email")} className="input" placeholder="amara@example.com" />
+                  <input type="email" {...register("email")} className="input" placeholder="you@example.com" />
                 </Field>
                 <Field label="Country" error={errors.country?.message}>
-                  <input {...register("country")} className="input" placeholder="Kenya" />
+                  <input {...register("country")} className="input" placeholder="Your country" />
                 </Field>
                 <Field label="Area of interest" error={errors.area?.message}>
                   <select {...register("area")} className="input">
@@ -158,7 +155,7 @@ function VolunteerPage() {
             {/* FAQ */}
             <div>
               <h3 className="font-display text-3xl font-semibold tracking-tight">Frequently asked</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Can't find your answer? <a href="mailto:volunteer@adref.org" className="text-primary font-semibold">Email us</a>.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Can't find your answer? <a href="mailto:hello@africanaidfoundation.org" className="text-primary font-semibold">Email us</a>.</p>
               <div className="mt-8 space-y-3">
                 {faqs.map((f, i) => (
                   <div key={f.q} className="rounded-2xl bg-card border border-border overflow-hidden">
